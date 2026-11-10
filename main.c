@@ -105,7 +105,7 @@ int main(int argc, char *argv[]) {
                 int zar = rand() % 100;
                 
                 if (zar < 10 || modulhasari > 70) {
-                    printf("Keþifte kaza gecirildi! Hasar alindi (-10 Saglik).\n");
+                    printf("Kesifte kaza gecirildi! Hasar alindi (-10 Saglik).\n");
                     saglik -= 10;
                     if (saglik < 0) saglik = 0;
                 }
@@ -428,7 +428,7 @@ int main(int argc, char *argv[]) {
     printf("           OYUN SONU RAPORU          \n");
     printf("=====================================\n");
     if (saglik <= 0 || oksijen <= 0) {
-        printf("DURUM: SIMULASYON BAÞARISIZ (Yasam destek sistemleri cöktu)\n");
+        printf("DURUM: SIMULASYON BASARISIZ (Yasam destek sistemleri cÃ¶ktu)\n");
     } else if (gun > 15) {
         printf("DURUM: TEBRIKLER! 15 Gun Hayatta Kaldiniz, Kurtarma Ekibi Ulasti!\n");
     } else {
