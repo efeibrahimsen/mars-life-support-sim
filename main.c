@@ -428,7 +428,7 @@ int main(int argc, char *argv[]) {
     printf("           OYUN SONU RAPORU          \n");
     printf("=====================================\n");
     if (saglik <= 0 || oksijen <= 0) {
-        printf("DURUM: SIMULASYON BASARISIZ (Yasam destek sistemleri cöktu)\n");
+        printf("DURUM: SIMULASYON BASARISIZ (Yasam destek sistemleri coktu)\n");
     } else if (gun > 15) {
         printf("DURUM: TEBRIKLER! 15 Gun Hayatta Kaldiniz, Kurtarma Ekibi Ulasti!\n");
     } else {
