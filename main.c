@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     int puan = 0;
     
     do {
-        printf("zorluk secin(K:kolay,N:normal,Z:zor):");
+        printf("Zorluk secin(K:kolay,N:normal,Z:zor):");
         zorluk = getchar();
         while (getchar() != '\n');
         
@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
                 saglik = 100;
                 oksijen = 100;
                 modulhasari = 0;
-                printf("kolay zorluk secildi.\n");
+                printf("\n -> Kolay zorluk secildi <-\n");
                 break;
                 
             case 'n':
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
                 saglik = 85;
                 oksijen = 90;
                 modulhasari = 20;
-                printf("normal zorluk secildi.\n");
+                printf("\n -> Normal zorluk secildi <-\n");
                 break;
                 
             case 'z':
@@ -56,11 +56,11 @@ int main(int argc, char *argv[]) {
                 saglik = 70;
                 oksijen = 75;
                 modulhasari = 40;
-                printf("zor zorluk secildi.\n");
+                printf("\n -> Zor zorluk secildi <-\n");
                 break;
                 
             default:
-                printf("gecerli bir zorluk seciniz!\n");
+                printf("\n -> Gecerli bir zorluk seciniz! <- \n\n");
                 break;
         }
     } while (firtinasuresi == 0);
@@ -87,7 +87,7 @@ int main(int argc, char *argv[]) {
             case 'G': {
                 printf("kesfe cikiliyor.\n");
                 if (enerji < 15 && oksijen < 10) {
-                    printf("enerji ve oksijen yetersiz!\nLUTFEN UYUYUN veya OKSIJEN URETIN!\n");
+                    printf("enerji ve oksijen yetersiz!\nLUTFEN UYUYUN ve OKSIJEN URETIN!\n");
                     printf("mevcut enerji: %d | mevcut oksijen: %d\n", enerji, oksijen);
                     break;
                 }
@@ -140,19 +140,19 @@ int main(int argc, char *argv[]) {
                 printf("harcanacak su miktarini giriniz: ");
                 
                 if (scanf("%d", &girilensu) != 1) {
-                    printf("hata: gecerli bir sayisal deger giriniz!\n");
+                    printf("Hata: gecerli bir sayisal deger giriniz!\n");
                     while (getchar() != '\n');
                     break;
                 }
                 while (getchar() != '\n');
                 
                 if (girilensu <= 0) {
-                    printf("hata: pozitif bir su miktari girilmelidir!\n");
+                    printf("Hata: pozitif bir deger girilmelidir!\n");
                     break;
                 }
                 
                 if (girilensu > su) {
-                    printf("hata: yetersiz su! mevcut su %d\n", su);
+                    printf("Hata: yetersiz su! mevcut su %d\n", su);
                     break;
                 }
 
@@ -161,7 +161,7 @@ int main(int argc, char *argv[]) {
                 int uretilenoksijen = (kullanilansu / 2) * 3;
                 
                 if (oksijen + uretilenoksijen > 100) {
-                    printf("hata: oksijen deposunda yer yok. Kapasite 100'dur (Mevcut: %d, Uretilmek istenen: %d)\n", oksijen, uretilenoksijen);
+                    printf("hata: oksijen deposunda yer yok. Kapasite 100'dur \n(Mevcut: %d, Uretilmek istenen: %d)\n", oksijen, uretilenoksijen);
                     break;
                 }
                     
@@ -173,6 +173,7 @@ int main(int argc, char *argv[]) {
                 printf("Kullanilan Su: %d | Harcanan Enerji: 10\n", kullanilansu);
                 printf("Uretilen Oksijen: %d\n", uretilenoksijen);
                 printf("Mevcut Su: %d | Mevcut Oksijen: %d | Mevcut Enerji: %d\n", su, oksijen, enerji);
+                printf(">>>>-------------<<<<\n");
                 
                 turgecerli = 1;
                 break;
@@ -181,35 +182,35 @@ int main(int argc, char *argv[]) {
             case 't':
             case 'T': {
                 if (yedekparca <= 0) {
-                    printf("hata: tamir icin yeterli yedek parca yok! (Mevcut: %d)\n", yedekparca);
+                    printf("Hata: tamir icin yeterli yedek parca yok! (Mevcut: %d)\n", yedekparca);
                     break;
                 }
                 if (modulhasari <= 0) {
-                    printf("Modul zaten hasarsiz! Tamir yapilmadi.\n");
+                    printf("Modul zaten saglam! Tamir yapilmadi.\n");
                     break;
                 }
                 if (modulhasari <= 30) {
                     yedekparca -= 1;
                     modulhasari -= 15;
-                    printf("Hafif hasar tamir edildi (-1 Yedek Parca, -15 Hasar).\n");
+                    printf("Hafif hasar tamir edildi \n(-1 Yedek Parca, -15 Hasar).\n");
                 }
                 else if (modulhasari <= 70) {
                     if (yedekparca < 2) {
-                        printf("hata: Orta derece hasari tamir etmek icin en az 2 yedek parca gerekli!\n");
+                        printf("Hata: Orta derece hasari tamir etmek icin en az 2 yedek parca gerekli!\n");
                         break;
                     }
                     yedekparca -= 2;
                     modulhasari -= 30;
-                    printf("Orta derece hasar tamir edildi (-2 Yedek Parca, -30 Hasar).\n");
+                    printf("Orta derece hasar tamir edildi \n(-2 Yedek Parca, -30 Hasar).\n");
                 }
                 else {
                     if (yedekparca < 3) {
-                        printf("hata: Agir hasari tamir etmek icin en az 3 yedek parca gerekli!\n");
+                        printf("Hata: Agir hasari tamir etmek icin en az 3 yedek parca gerekli!\n");
                         break;
                     }
                     yedekparca -= 3;
                     modulhasari -= 50;
-                    printf("Agir hasar tamir edildi (-3 Yedek Parca, -50 Hasar).\n");
+                    printf("Agir hasar tamir edildi \n(-3 Yedek Parca, -50 Hasar).\n");
                 }
                 if (modulhasari < 0) modulhasari = 0;
                 
@@ -233,7 +234,7 @@ int main(int argc, char *argv[]) {
                     printf("TUM SISTEMLER NORMAL.\n");
                 }
                 else {
-                    printf("[!] UYARI / KRITIK DURUM:\n");
+                    printf("!!UYARI!! / KRITIK DURUM:\n");
                     if (saglik < 30) printf(" - KRITIK SAGLIK! (Mevcut: %d)\n", saglik);
                     if (oksijen < 25) printf(" - DUSUK OKSIJEN! (Mevcut: %d)\n", oksijen);
                     if (enerji < 15) printf(" - DUSUK ENERJI! (Mevcut: %d)\n", enerji);
@@ -296,7 +297,7 @@ int main(int argc, char *argv[]) {
                     
                     int olay = rand() % 4;
                     if (olay == 0) {
-                        printf("Firtinadan zararsiz korundunuz.\n");
+                        printf("Firtinadan hasar almadınız.\n");
                     }
                     else if (olay == 1) {
                         int alinan_hasar = 10 * hasarkatsayisi;
