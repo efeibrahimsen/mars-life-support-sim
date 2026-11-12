@@ -297,7 +297,7 @@ int main(int argc, char *argv[]) {
                     
                     int olay = rand() % 4;
                     if (olay == 0) {
-                        printf("Firtinadan hasar almadınız.\n");
+                        printf("Firtinadan hasar almadiniz.\n");
                     }
                     else if (olay == 1) {
                         int alinan_hasar = 10 * hasarkatsayisi;
